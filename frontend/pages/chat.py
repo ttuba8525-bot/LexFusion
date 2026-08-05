@@ -16,12 +16,12 @@ def render_chat_page(client: LexFusionAPIClient):
     """Renders the single-shot RAG Chat assistant."""
     st.markdown(
         """
-        <div style="margin-bottom: 25px;">
-            <h1 class="court-title" style="font-size: 2.2rem; margin-bottom: 5px;">
-                💬 Legal <span class="gold-text">Research Assistant</span>
+        <div class="title-banner">
+            <h1 class="court-title" style="font-size: 2.4rem; margin-bottom: 8px;">
+                ⚖️ LEXFUSION <span class="gold-text">RESEARCH ASSISTANT</span>
             </h1>
-            <p style="color: #9ca3af; font-size: 1rem;">
-                Ask direct legal questions to analyze terms, obligations, and clauses in your document corpus.
+            <p style="color: #9ca3af; font-size: 0.98rem; margin: 0; letter-spacing: 0.5px;">
+                Direct Legal Query Engine & Grounded Document Corpus Analysis
             </p>
         </div>
         """,

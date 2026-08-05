@@ -1,106 +1,128 @@
-/* Import Premium Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@500;700&display=swap');
+/* Import Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700;800;900&family=Cinzel+Decorative:wght@700&display=swap');
 
-/* Main App Layout Settings */
+/* Main App Background with Title Spotlight & Geometric Law Grid */
 .stApp {
-    background-color: #030712;
+    background-color: #050814;
     background-image: 
-        radial-gradient(at 0% 0%, rgba(201, 168, 76, 0.06) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(29, 78, 216, 0.05) 0px, transparent 50%);
+        /* Top Title Gold Spotlight Effect */
+        radial-gradient(circle at 50% -10%, rgba(201, 168, 76, 0.18) 0%, rgba(201, 168, 76, 0.05) 35%, transparent 70%),
+        /* Bottom Right Ambient Blue Glow */
+        radial-gradient(circle at 90% 90%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
+        /* Subtle Legal Architectural Grid */
+        linear-gradient(to right, rgba(201, 168, 76, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(201, 168, 76, 0.025) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
     background-attachment: fixed;
     font-family: 'Inter', sans-serif;
     color: #f3f4f6;
 }
 
-/* Titles and Typography */
+/* Header & Title Styling */
 h1, h2, h3, .court-title {
     font-family: 'Cinzel', serif;
-    color: #f3f4f6;
-    letter-spacing: 1px;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+/* Glowing Title Banner Accent */
+.title-banner {
+    text-align: center;
+    padding: 25px 20px;
+    background: linear-gradient(180deg, rgba(201, 168, 76, 0.08) 0%, rgba(17, 24, 39, 0.4) 100%);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: 16px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
 }
 
 .gold-text {
-    color: #c9a84c;
-    text-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+    background: linear-gradient(135deg, #fef08a 0%, #c9a84c 50%, #9a7b2c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
 }
 
 /* Glassmorphism Cards */
 .glass-card {
-    background: rgba(17, 24, 39, 0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 12px;
-    padding: 20px;
+    background: rgba(13, 20, 36, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 22px;
     margin-bottom: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.35);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(201, 168, 76, 0.3);
-    box-shadow: 0 12px 40px 0 rgba(201, 168, 76, 0.05);
+    transform: translateY(-3px);
+    border-color: rgba(201, 168, 76, 0.35);
+    box-shadow: 0 14px 45px 0 rgba(201, 168, 76, 0.08);
 }
 
 /* Courtroom Split Columns */
 .advocate-card {
     border-left: 4px solid #9ca3af;
-    background: rgba(17, 24, 39, 0.45);
-    border-radius: 0 12px 12px 0;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 0 14px 14px 0;
 }
 
 .advocate-prosecution {
     border-left: 4px solid #c9a84c;
-    box-shadow: inset 5px 0 20px rgba(201, 168, 76, 0.03);
+    box-shadow: inset 6px 0 25px rgba(201, 168, 76, 0.04);
 }
 
 .advocate-defence {
     border-left: 4px solid #3b82f6;
-    box-shadow: inset 5px 0 20px rgba(59, 130, 246, 0.03);
+    box-shadow: inset 6px 0 25px rgba(59, 130, 246, 0.04);
 }
 
 /* Status Badges */
 .status-badge {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 4px 14px;
     border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 .badge-prosecution {
     background: rgba(201, 168, 76, 0.15);
     color: #f59e0b;
-    border: 1px solid rgba(201, 168, 76, 0.3);
+    border: 1px solid rgba(201, 168, 76, 0.35);
 }
 
 .badge-defence {
     background: rgba(59, 130, 246, 0.15);
     color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.35);
 }
 
 .badge-judge {
-    background: rgba(139, 92, 246, 0.15);
-    color: #a78bfa;
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.18);
+    color: #c4b5fd;
+    border: 1px solid rgba(139, 92, 246, 0.35);
     font-family: 'Cinzel', serif;
 }
 
-/* Pulsing Animation for Typing Indicator */
+/* Typing Indicator Animation */
 @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.5; transform: scale(0.98); }
+    50% { opacity: 1; transform: scale(1); }
 }
 
 .typing-indicator {
-    animation: pulse 1.5s infinite ease-in-out;
-    color: #9ca3af;
+    animation: pulse 1.6s infinite ease-in-out;
+    color: #c9a84c;
     font-style: italic;
     font-size: 0.9rem;
+    padding: 10px;
 }
 
 /* Custom Scrollbars */
@@ -109,12 +131,12 @@ h1, h2, h3, .court-title {
     height: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: rgba(17, 24, 39, 0.3);
+    background: rgba(10, 15, 30, 0.5);
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(201, 168, 76, 0.2);
+    background: rgba(201, 168, 76, 0.25);
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(201, 168, 76, 0.4);
+    background: rgba(201, 168, 76, 0.5);
 }

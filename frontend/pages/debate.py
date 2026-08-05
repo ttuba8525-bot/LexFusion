@@ -17,12 +17,12 @@ def render_debate_page(client: LexFusionAPIClient):
     """Renders the adversarial debate page."""
     st.markdown(
         """
-        <div style="margin-bottom: 25px;">
-            <h1 class="court-title" style="font-size: 2.2rem; margin-bottom: 5px;">
-                🏛️ Cross-Examine <span class="gold-text">Debate Chamber</span>
+        <div class="title-banner">
+            <h1 class="court-title" style="font-size: 2.4rem; margin-bottom: 8px;">
+                🏛️ CROSS-EXAMINE <span class="gold-text">DEBATE CHAMBER</span>
             </h1>
-            <p style="color: #9ca3af; font-size: 1rem;">
-                Run an adversarial AI-driven debate between Prosecution and Defence to uncover hidden loopholes and legal weaknesses.
+            <p style="color: #9ca3af; font-size: 0.98rem; margin: 0; letter-spacing: 0.5px;">
+                Multi-Agent Adversarial Debate • Prosecution vs. Defence • Automated Judicial Ruling
             </p>
         </div>
         """,
