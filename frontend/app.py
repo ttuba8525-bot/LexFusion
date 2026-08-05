@@ -83,16 +83,24 @@ def main():
                     else:
                         st.sidebar.error(f"Failed: {file.name}")
 
+    # Audio & Interactive FX Settings
+    st.sidebar.markdown("### 🔊 Ambient Effects")
+    st.session_state.sound_fx = st.sidebar.checkbox(
+        "Enable Gavel Sound FX",
+        value=True,
+        help="Plays a realistic gavel strike sound effect when verdicts are rendered.",
+    )
+
     # Display Collection Stats
     st.sidebar.markdown(
         """
-        <div class="glass-card" style="margin-top: 20px; padding: 12px; background: rgba(255,255,255,0.02);">
-            <div style="font-size: 0.8rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px;">Vector Database Stats</div>
-            <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+        <div class="glass-card" style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.02);">
+            <div style="font-size: 0.78rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px;">Vector Database Stats</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.9rem;">
                 <span>📚 Collection Status:</span>
                 <span class="gold-text" style="font-weight: 600;">ACTIVE</span>
             </div>
-            <div style="display: flex; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
                 <span>📄 Loaded Documents:</span>
                 <span style="font-weight: 600;">14</span>
             </div>

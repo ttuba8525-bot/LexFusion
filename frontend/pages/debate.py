@@ -47,6 +47,9 @@ def render_debate_page(client: LexFusionAPIClient):
             st.warning("Please provide a legal query first.")
             return
 
+        # Store current query
+        st.session_state.current_query = user_query
+
         # Running indicator
         with st.status("Court is in session. Running Agentic Graph...", expanded=True) as status:
             status.update(label="Advocates preparing arguments...", state="running")
@@ -65,26 +68,27 @@ def render_debate_page(client: LexFusionAPIClient):
                 # Render results in session state to persist
                 st.session_state.active_debate = response
             else:
-                status.update(label="Court session errored.", state="error")
+                status.update(label="Court session aborted.", state="error")
                 err_msg = response.get("error_message", "Execution failed.")
                 st.error(f"Court session aborted: {err_msg}")
 
     # Display active debate results
     if "active_debate" in st.session_state:
         res = st.session_state.active_debate
-        
+        active_query = st.session_state.get("current_query", "Legal Examination Matter")
+
         # Render the rounds of debate (Advocate A vs. Advocate B)
         render_debate_rounds(res.get("argument_history", []))
         
         st.markdown("<hr style='border-color: rgba(255, 255, 255, 0.1); margin-top: 30px; margin-bottom: 30px;' />", unsafe_allow_html=True)
         
-        # Render the Judge ruling and confidence gauge
+        # Render the Judge ruling, radar chart, and PDF Legal Brief exporter
         render_synthesis_card(
-            synthesis=res.get("synthesis", "Synthesis finding missing."),
-            confidence_score=res.get("confidence_score", 50),
+            query=active_query,
+            debate_data=res,
         )
 
         st.markdown("<br />", unsafe_allow_html=True)
 
-        # Render sources
+        # Render sources with similarity heatmaps
         render_source_cards(res.get("source_documents", []))
